@@ -1,9 +1,9 @@
 ## Fashion MNIST 
 neural network written from scratch in C++ as part of the [PV021 Neural Networks](https://is.muni.cz/course/fi/PV021) course
 
-### authors
-Otakar Hirš 485661
-Petr Janík 485122
+### Authors
+- Otakar Hirš 485661
+- Petr Janík 485122
 
 ### How to run
 explore and use the `RUN` script.
