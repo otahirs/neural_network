@@ -1,0 +1,31 @@
+#!/bin/bash
+set -e
+
+echo "######################"
+echo "    ADDING MODULES    "
+echo "######################"
+
+echo "Adding modules"
+#module add cmake
+#module add gcc
+#CC=/packages/run.64/gcc-10.2/bin/gcc
+#CXX=/packages/run.64/gcc-10.2/bin/g++
+echo "#################"
+echo "    COMPILING    "
+echo "#################"
+
+cd neural_network
+
+rm -rf build && mkdir build
+cd build
+# TODO exclude tests
+cmake ..
+make && make install
+cd ..
+
+echo "#################"
+echo "     RUNNING     "
+echo "#################"
+
+cd ..
+./neural_network/bin/neural_network data/fashion_mnist_train_vectors.csv data/fashion_mnist_train_labels.csv data/fashion_mnist_test_vectors.csv actualPredictions
